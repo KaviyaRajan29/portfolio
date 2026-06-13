@@ -41,11 +41,20 @@ Repo → **Settings → Secrets and variables → Actions → New repository sec
 Push to `main`, or **Actions tab → the run → Re-run jobs**. On success the Worker is live at
 `https://kaviya-portfolio.<your-subdomain>.workers.dev/`.
 
-### 4 · Custom domain
+### 4 · Custom domain (kaviya.me)
 
-Cloudflare dashboard → **Workers & Pages → `kaviya-portfolio` → Settings → Domains & Routes →
-Add Custom Domain → `kaviya.me`** (the domain's zone must be on Cloudflare). Then `kaviya.me/`
-serves the site.
+`wrangler.jsonc` declares `"routes": [{ "pattern": "kaviya.me", "custom_domain": true }]`, so the
+deploy binds the Worker to `kaviya.me` automatically — **once both are true**:
+
+1. **kaviya.me's DNS zone is on Cloudflare.** Dashboard → **Add a site** → `kaviya.me` → review/import
+   the scanned DNS records (so email/other records carry over) → at your registrar, replace the
+   nameservers with the two Cloudflare gives you → wait for the zone to show **Active**.
+2. **The API token includes `Zone → Workers Routes → Edit`** for kaviya.me (the "Edit Cloudflare
+   Workers" template covers it; recreate the token + update the secret if it was account-only).
+
+Then re-run the deploy → `https://kaviya.me/` serves the site (Cloudflare auto-creates the proxied
+DNS record + HTTPS). To go live **before** the domain is ready, temporarily remove the `routes` line
+from `wrangler.jsonc` and register a workers.dev subdomain instead.
 
 ## Notes
 

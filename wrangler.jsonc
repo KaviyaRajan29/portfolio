@@ -2,13 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "kaviya-portfolio",
   "compatibility_date": "2024-11-01",
-  // Publish straight to the custom domain (no workers.dev subdomain needed).
-  // Requires kaviya.me's DNS zone to be on Cloudflare and the API token to include
-  // Zone → Workers Routes → Edit (the "Edit Cloudflare Workers" token template has it).
-  "routes": [{ "pattern": "kaviya.me", "custom_domain": true }],
-  // Static-assets-only Worker (no `main` script): serve the built SPA from ./dist.
-  // `single-page-application` returns index.html (200) for any non-asset path so
-  // React Router handles the route; real assets keep their correct MIME types.
+  // Static assets (React build output)
   "assets": {
     "directory": "./dist",
     "not_found_handling": "single-page-application"
