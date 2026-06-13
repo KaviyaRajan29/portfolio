@@ -1,0 +1,232 @@
+.wrap {
+  position: relative;
+}
+
+.editor {
+  position: relative;
+  border-radius: 16px;
+  background: #181b2c;
+  border: 1px solid #2a2f45;
+  box-shadow:
+    0 40px 90px -30px rgba(20, 24, 40, 0.7),
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+  overflow: hidden;
+  font-family: var(--font-mono);
+}
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 16px;
+  border-bottom: 1px solid #262b40;
+  background: #15182a;
+}
+
+.dotRed,
+.dotYellow,
+.dotGreen {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+.dotRed {
+  background: #ff5f57;
+}
+.dotYellow {
+  background: #febc2e;
+}
+.dotGreen {
+  background: #28c840;
+}
+
+.filename {
+  margin-left: 14px;
+  font-size: 12px;
+  color: #7e869c;
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 128px 1fr;
+  min-height: 268px;
+}
+
+.explorer {
+  border-right: 1px solid #232842;
+  padding: 14px 12px;
+  font-size: 11.5px;
+  color: #7e869c;
+  background: #16192b;
+}
+
+.explorerTitle {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: #525b76;
+  margin-bottom: 10px;
+}
+
+.folderOpen {
+  margin-bottom: 7px;
+  color: #a9b2cc;
+}
+
+.fileList {
+  padding-left: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.fileActive {
+  color: #82aaff;
+  background: #222a45;
+  border-radius: 5px;
+  padding: 2px 6px;
+  margin-left: -6px;
+}
+
+.code {
+  padding: 15px 16px;
+  font-size: 12.5px;
+  line-height: 1.95;
+  overflow: hidden;
+  white-space: pre;
+}
+
+.ln {
+  color: #525b76;
+  margin-right: 14px;
+}
+
+.kw {
+  color: #c792ea;
+}
+.str {
+  color: #c3e88d;
+}
+.txt {
+  color: #f0f0db;
+}
+.fn {
+  color: #82aaff;
+}
+.tag {
+  color: #f07178;
+}
+.attr {
+  color: #ffcb6b;
+}
+.num {
+  color: #f78c6c;
+}
+
+.codeCaret {
+  display: inline-block;
+  width: 7px;
+  height: 15px;
+  background: #82aaff;
+  vertical-align: -2px;
+  margin-left: 3px;
+  animation: blink 1.1s step-end infinite;
+}
+
+.terminal {
+  border-top: 1px solid #262b40;
+  background: #14172a;
+  padding: 11px 16px;
+  font-size: 11.5px;
+  color: #8c95ae;
+}
+.termArrow {
+  color: #c3e88d;
+}
+.termPath {
+  color: #82aaff;
+}
+.termDim {
+  color: #525b76;
+}
+.termStatus {
+  float: right;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #48c68c;
+}
+.termStatusDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #48c68c;
+}
+
+.floating {
+  position: absolute;
+  right: -14px;
+  bottom: -26px;
+  width: 208px;
+  background: #1e2236;
+  border: 1px solid #2e3450;
+  border-radius: 14px;
+  padding: 14px 15px;
+  box-shadow: 0 30px 60px -22px rgba(0, 0, 0, 0.6);
+  animation: floaty 6s ease-in-out infinite;
+}
+
+.floatTitle {
+  font-size: 12.5px;
+  color: #fff;
+  font-weight: 600;
+}
+.floatTitleDim {
+  color: #7e869c;
+  font-weight: 400;
+}
+
+.floatRow {
+  display: flex;
+  gap: 9px;
+  margin-top: 11px;
+}
+
+.floatStat {
+  flex: 1;
+  background: #262b43;
+  border-radius: 9px;
+  padding: 9px;
+}
+.floatStatLabel {
+  font-size: 9.5px;
+  color: #8c95ae;
+}
+.floatStatValue {
+  font-size: 15px;
+  color: #fff;
+  font-weight: 700;
+}
+.floatStatDelta {
+  font-size: 9px;
+  color: #48c68c;
+}
+
+.floatPerf {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 9px;
+  background: #262b43;
+  border-radius: 9px;
+  padding: 9px 11px;
+}
+
+.floatRing {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 3px solid #2e3450;
+  border-top-color: #82aaff;
+  display: inline-block;
+  animation: ringspin 2.4s linear infinite;
+}

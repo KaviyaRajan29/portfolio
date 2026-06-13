@@ -1,0 +1,50 @@
+/* Design tokens — the prototype's exact palette, with a light (default) and
+   dark scale switched via :root[data-theme="dark"]. */
+:root {
+  --bg: #f0f0db;
+  --bg-2: #ebe7cf;
+  --surface: #faf8ec;
+  --surface-2: #f2eedb;
+  --border: #ded7bd;
+  --text: #2b3047;
+  --text-2: #6b6f82;
+  --muted: #8c8f9d;
+  --navy: #30364f;
+  --navy-2: #262b41;
+  --slate: #acbac4;
+  --tan: #e1d9bc;
+  --cream: #f0f0db;
+  --accent: #30364f;
+  --accent-text: #f0f0db;
+  --green: #3fa877;
+  --danger: #d2553f;
+  --glass: rgba(240, 240, 219, 0.72);
+  --shadow: 0 1px 2px rgba(48, 54, 79, 0.06), 0 14px 36px -14px rgba(48, 54, 79, 0.2);
+  --shadow-sm: 0 1px 2px rgba(48, 54, 79, 0.05), 0 5px 16px -10px rgba(48, 54, 79, 0.16);
+  --shadow-lg: 0 2px 4px rgba(48, 54, 79, 0.06), 0 30px 70px -24px rgba(48, 54, 79, 0.34);
+
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+
+  --maxw: 1240px;
+  --nav-h: 70px;
+}
+
+:root[data-theme='dark'] {
+  --bg: #13162a;
+  --bg-2: #171b30;
+  --surface: #20243a;
+  --surface-2: #272c45;
+  --border: #333a57;
+  --text: #f0f0db;
+  --text-2: #acbac4;
+  --muted: #7e889a;
+  --accent: #e1d9bc;
+  --accent-text: #20243a;
+  --green: #48c68c;
+  --glass: rgba(19, 22, 42, 0.7);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.32), 0 18px 44px -16px rgba(0, 0, 0, 0.6);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.26), 0 8px 22px -12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 2px 6px rgba(0, 0, 0, 0.4), 0 34px 80px -26px rgba(0, 0, 0, 0.7);
+}

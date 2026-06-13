@@ -1,0 +1,9 @@
+.caret {
+  display: inline-block;
+  width: 3px;
+  height: 0.95em;
+  margin-left: 3px;
+  background: var(--navy);
+  vertical-align: -2px;
+  animation: blink 1s step-end infinite;
+}

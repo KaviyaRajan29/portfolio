@@ -1,0 +1,13 @@
+.section {
+  padding-top: 48px;
+  padding-bottom: 8px;
+}
+
+.heading {
+  margin-bottom: 26px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 8px;
+}
