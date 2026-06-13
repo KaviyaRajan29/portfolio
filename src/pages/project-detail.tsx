@@ -63,27 +63,28 @@ export function Component() {
             </a>
           </div>
         </div>
-        <div className={styles.heroArt} aria-hidden>
-          <div
-            className={styles.heroGlow}
-            style={{ background: `radial-gradient(circle, ${project.accent}, transparent 70%)` }}
-          />
-          <span className={styles.heroGlyph} style={{ background: project.accent }}>
-            {project.glyph}
-          </span>
+        <div className={styles.heroArt}>
+          {project.image ? (
+            <img
+              className={styles.heroImg}
+              src={project.image}
+              alt={`${project.title} screenshot`}
+              loading="lazy"
+            />
+          ) : (
+            <>
+              <div
+                className={styles.heroGlow}
+                style={{ background: `radial-gradient(circle, ${project.accent}, transparent 70%)` }}
+                aria-hidden
+              />
+              <span className={styles.heroGlyph} style={{ background: project.accent }} aria-hidden>
+                {project.glyph}
+              </span>
+            </>
+          )}
         </div>
       </Reveal>
-
-      {project.image ? (
-        <Reveal className={styles.shot}>
-          <img
-            className={styles.shotImg}
-            src={project.image}
-            alt={`${project.title} screenshot`}
-            loading="lazy"
-          />
-        </Reveal>
-      ) : null}
 
       <div className={styles.grid}>
         <Reveal className={styles.panel}>
