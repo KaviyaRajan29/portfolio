@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { LuMenu, LuX } from 'react-icons/lu'
 import { cn } from '@/lib/cn'
 import { NAV_ITEMS } from '@/data/nav'
@@ -37,7 +37,7 @@ export function Navbar() {
                 <>
                   {item.label}
                   {isActive && (
-                    <motion.span
+                    <m.span
                       layoutId="nav-active"
                       className={styles.activeDot}
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}

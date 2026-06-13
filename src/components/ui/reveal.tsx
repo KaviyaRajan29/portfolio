@@ -1,17 +1,17 @@
 import type { ReactNode } from 'react'
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { fadeUp } from '@/components/motion/variants'
 
 // Pre-made motion components (stable references — never created during render).
 const TAGS = {
-  div: motion.div,
-  section: motion.section,
-  article: motion.article,
-  h1: motion.h1,
-  h2: motion.h2,
-  p: motion.p,
-  ul: motion.ul,
-  li: motion.li,
+  div: m.div,
+  section: m.section,
+  article: m.article,
+  h1: m.h1,
+  h2: m.h2,
+  p: m.p,
+  ul: m.ul,
+  li: m.li,
 } as const
 
 type RevealTag = keyof typeof TAGS

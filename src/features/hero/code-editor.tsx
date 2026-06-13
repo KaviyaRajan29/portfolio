@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { DashboardCard } from './dashboard-card'
 import styles from './code-editor.module.css'
 
 /** A syntax-coloured token. */
@@ -106,30 +107,7 @@ export function CodeEditor() {
         </div>
       </div>
 
-      <div className={styles.floating}>
-        <div className={styles.floatTitle}>
-          Dashboard <span className={styles.floatTitleDim}>· live</span>
-        </div>
-        <div className={styles.floatRow}>
-          <div className={styles.floatStat}>
-            <div className={styles.floatStatLabel}>Users</div>
-            <div className={styles.floatStatValue}>12,540</div>
-            <div className={styles.floatStatDelta}>+12.5%</div>
-          </div>
-          <div className={styles.floatStat}>
-            <div className={styles.floatStatLabel}>Revenue</div>
-            <div className={styles.floatStatValue}>$24.8k</div>
-            <div className={styles.floatStatDelta}>+8.2%</div>
-          </div>
-        </div>
-        <div className={styles.floatPerf}>
-          <div>
-            <div className={styles.floatStatLabel}>Performance</div>
-            <div className={styles.floatStatValue}>98.6%</div>
-          </div>
-          <span className={styles.floatRing} />
-        </div>
-      </div>
+      <DashboardCard />
     </div>
   )
 }

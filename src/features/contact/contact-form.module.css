@@ -44,6 +44,16 @@
   font-weight: 600;
 }
 
+.formError {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--danger);
+  background: rgba(210, 85, 63, 0.1);
+  border: 1px solid rgba(210, 85, 63, 0.3);
+  border-radius: 10px;
+  padding: 10px 13px;
+}
+
 .submit {
   margin-top: 4px;
   width: 100%;
