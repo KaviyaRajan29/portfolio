@@ -29,6 +29,8 @@ export const skillSchema = z.object({
   name: z.string(),
   bg: z.string(),
   fg: z.string(),
+  category: z.string(),
+  level: z.number().min(0).max(100),
 })
 
 export const projectSchema = z.object({
