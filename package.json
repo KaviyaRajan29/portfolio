@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "wrangler deploy"
+    "deploy": "npx wrangler@4.100.0 deploy"
   },
   "dependencies": {
     "@hookform/resolvers": "5.4.0",
@@ -33,7 +33,6 @@
     "globals": "17.6.0",
     "typescript": "6.0.3",
     "typescript-eslint": "8.61.0",
-    "vite": "8.0.16",
-    "wrangler": "^4.100.0"
+    "vite": "8.0.16"
   }
 }
