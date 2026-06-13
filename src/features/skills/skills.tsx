@@ -1,19 +1,24 @@
-import { LuCode, LuSparkles } from 'react-icons/lu'
+import { LuCode, LuSparkles, LuUsers } from 'react-icons/lu'
 import { cn } from '@/lib/cn'
 import { Reveal } from '@/components/ui/reveal'
 import { SectionHeading } from '@/components/ui/section-heading'
 import { Counter } from '@/components/motion/counter'
-import { CATEGORIES, EXPLORING, SKILLS, skillsByCategory } from '@/data/skills'
-import { SKILL_ICONS } from '@/lib/icons'
+import {
+  CATEGORIES,
+  EXPLORING,
+  PROFESSIONAL_SKILLS,
+  SKILLS,
+  skillsByCategory,
+} from '@/data/skills'
+import { PROFESSIONAL_ICONS, SKILL_ICONS } from '@/lib/icons'
 import { SkillBar } from './skill-bar'
 import { SkillMarquee } from './skill-marquee'
 import styles from './skills.module.css'
 
 const STATS = [
-  { to: SKILLS.length, suffix: '', label: 'Technologies' },
+  { to: SKILLS.length, suffix: '', label: 'Technical skills' },
+  { to: PROFESSIONAL_SKILLS.length, suffix: '', label: 'Soft skills' },
   { to: CATEGORIES.length, suffix: '', label: 'Disciplines' },
-  { to: 4, suffix: '+', label: 'Years' },
-  { to: 30, suffix: '+', label: 'Projects' },
 ]
 
 export function Skills() {
@@ -27,8 +32,8 @@ export function Skills() {
           iconFontSize={20}
         />
         <p className={styles.lead}>
-          The stack I reach for to ship fast, accessible products end-to-end — from typed React
-          frontends to Node APIs, databases, and the tooling that ties it all together.
+          The tools I work with — from Java and databases to frontend and backend web development —
+          alongside the people skills I've built through teaching, leadership, and community work.
         </p>
         <div className={styles.stats}>
           {STATS.map((stat) => (
@@ -61,6 +66,27 @@ export function Skills() {
         })}
       </div>
 
+      <Reveal className={styles.professional}>
+        <SectionHeading
+          icon={<LuUsers aria-hidden />}
+          title="Professional Skills"
+          iconFontSize={20}
+        />
+        <div className={styles.professionalChips}>
+          {PROFESSIONAL_SKILLS.map((name) => {
+            const Icon = PROFESSIONAL_ICONS[name] ?? LuSparkles
+            return (
+              <span key={name} className={styles.professionalChip}>
+                <span className={styles.professionalIcon} aria-hidden>
+                  <Icon />
+                </span>
+                {name}
+              </span>
+            )
+          })}
+        </div>
+      </Reveal>
+
       <Reveal className={styles.exploring}>
         <div className={styles.exploringHead}>
           <span className={styles.exploringIcon} aria-hidden>
@@ -69,7 +95,7 @@ export function Skills() {
           <div>
             <div className={styles.exploringTitle}>Currently exploring</div>
             <div className={styles.exploringSub}>
-              Always leveling up — here's what's on my desk right now.
+              Always leveling up — what I'm learning as I grow into full-stack development.
             </div>
           </div>
         </div>

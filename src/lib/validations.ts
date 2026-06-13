@@ -60,6 +60,16 @@ export const experienceSchema = z.object({
   detail: z.string(),
 })
 
+export const educationSchema = z.object({
+  institution: z.string(),
+  qualification: z.string(),
+  period: z.string(),
+  mark: z.string(),
+  bg: z.string(),
+  fg: z.string(),
+  detail: z.string(),
+})
+
 export const socialSchema = z.object({
   label: z.string(),
   handle: z.string(),
@@ -89,6 +99,7 @@ export type Profile = z.infer<typeof profileSchema>
 export type Skill = z.infer<typeof skillSchema>
 export type Project = z.infer<typeof projectSchema>
 export type ExperienceItem = z.infer<typeof experienceSchema>
+export type Education = z.infer<typeof educationSchema>
 export type Social = z.infer<typeof socialSchema>
 export type NavItem = z.infer<typeof navItemSchema>
 export type Theme = z.infer<typeof themeSchema>

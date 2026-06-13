@@ -1,67 +1,64 @@
 import type { IconType } from 'react-icons'
 import {
-  SiDocker,
-  SiExpress,
-  SiFigma,
-  SiFirebase,
+  SiC,
+  SiCss,
+  SiFacebook,
   SiGit,
   SiGithub,
-  SiGo,
-  SiGraphql,
   SiHtml5,
+  SiInstagram,
   SiJavascript,
-  SiJest,
-  SiKubernetes,
-  SiMongodb,
-  SiNextdotjs,
+  SiMysql,
   SiNodedotjs,
-  SiPostgresql,
-  SiPrisma,
-  SiPython,
   SiReact,
-  SiRedis,
-  SiRust,
-  SiTailwindcss,
-  SiThreedotjs,
-  SiTypescript,
-  SiVite,
-  SiX,
+  SiSpringboot,
 } from 'react-icons/si'
-import { LuMail } from 'react-icons/lu'
-import { FaLinkedinIn } from 'react-icons/fa6'
+import { FaJava, FaLinkedinIn } from 'react-icons/fa6'
+import {
+  LuCrown,
+  LuDatabase,
+  LuGraduationCap,
+  LuHeadphones,
+  LuHeartHandshake,
+  LuMail,
+  LuMessageCircle,
+  LuMic,
+  LuTrendingUp,
+  LuUsers,
+} from 'react-icons/lu'
 
-/** Tech name → brand logo. Keeps data serializable (strings); components resolve here. */
+/** Technical skill / tech name → logo. Keeps data serializable (strings). */
 export const SKILL_ICONS: Record<string, IconType> = {
+  Java: FaJava,
+  C: SiC,
   JavaScript: SiJavascript,
-  TypeScript: SiTypescript,
-  React: SiReact,
-  'Next.js': SiNextdotjs,
   HTML5: SiHtml5,
-  Tailwind: SiTailwindcss,
+  CSS3: SiCss,
+  MySQL: SiMysql,
+  DBMS: LuDatabase,
+  React: SiReact,
   'Node.js': SiNodedotjs,
-  Express: SiExpress,
-  GraphQL: SiGraphql,
-  Python: SiPython,
-  MongoDB: SiMongodb,
-  PostgreSQL: SiPostgresql,
-  Prisma: SiPrisma,
-  Firebase: SiFirebase,
-  Redis: SiRedis,
   Git: SiGit,
-  Vite: SiVite,
-  Docker: SiDocker,
-  Jest: SiJest,
-  Figma: SiFigma,
-  Rust: SiRust,
-  Go: SiGo,
-  Kubernetes: SiKubernetes,
-  'Three.js': SiThreedotjs,
+  'Spring Boot': SiSpringboot,
+}
+
+/** Professional / soft skill → Lucide icon. */
+export const PROFESSIONAL_ICONS: Record<string, IconType> = {
+  Communication: LuMessageCircle,
+  Leadership: LuCrown,
+  'Public Speaking': LuMic,
+  Teamwork: LuUsers,
+  'Customer Service': LuHeadphones,
+  'Teacher Training': LuGraduationCap,
+  'Business Strategy': LuTrendingUp,
+  'Social Services': LuHeartHandshake,
 }
 
 /** Social label → brand logo. */
 export const SOCIAL_ICONS: Record<string, IconType> = {
   GitHub: SiGithub,
   LinkedIn: FaLinkedinIn,
-  Twitter: SiX,
+  Facebook: SiFacebook,
+  Instagram: SiInstagram,
   Email: LuMail,
 }

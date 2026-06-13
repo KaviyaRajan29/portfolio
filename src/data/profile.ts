@@ -3,17 +3,17 @@ import { profileSchema } from '@/lib/validations'
 export const PROFILE = profileSchema.parse({
   name: 'Kaviya Rajan',
   brand: 'Kaviya.dev',
-  badge: 'Full Stack Developer',
-  roles: ['Full Stack Developer', 'React Specialist', 'UI / UX Engineer', 'Problem Solver'],
+  badge: 'ICT Undergraduate',
+  roles: ['Full Stack Developer', 'ICT Undergraduate', 'Web Developer', 'Java Developer'],
   heroBlurb:
-    'I build modern, scalable web applications and intuitive user experiences that solve real-world problems and drive measurable impact.',
+    "I'm an ICT undergraduate and aspiring Full Stack Developer passionate about web and software development — building with Java, MySQL, and modern web technologies, and eager to contribute to real-world IT projects.",
   aboutBlurb:
-    "I'm a passionate Full Stack Developer with 4+ years of experience building web applications with modern technologies. I love turning ideas into products that are fast, accessible, and beautiful — sweating the details others skip.",
+    "I'm an ICT undergraduate at the University of Ruhuna and an aspiring Full Stack Developer with a strong interest in web and software development. I'm skilled in Java, MySQL, frontend and backend development, and database management — and I'm eager to gain practical experience and contribute to real-world IT projects.",
   stats: [
-    { value: '4+', label: 'Years exp.' },
-    { value: '30+', label: 'Projects' },
-    { value: '12+', label: 'Happy clients' },
+    { value: '2027', label: 'Graduating' },
+    { value: 'ICT', label: '@ Ruhuna' },
+    { value: '10+', label: 'Skills' },
   ],
-  email: 'hello@kaviya.dev',
+  email: 'kaviyarajan59@gmail.com',
   year: 2026,
 })

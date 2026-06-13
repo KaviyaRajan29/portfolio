@@ -9,6 +9,7 @@ export type {
   Skill,
   Project,
   ExperienceItem,
+  Education,
   Social,
   NavItem,
   Theme,

@@ -18,14 +18,31 @@ export function FeaturedProjects() {
           iconFontSize={20}
           action={
             <Link to="/projects" className={styles.viewAll}>
-              View all projects <LuArrowRight aria-hidden />
+              All projects <LuArrowRight aria-hidden />
             </Link>
           }
         />
       </Reveal>
-      <div className={styles.grid}>
-        <ProjectGrid projects={FEATURED_PROJECTS} />
-      </div>
+
+      {FEATURED_PROJECTS.length === 0 ? (
+        <Reveal className={styles.comingSoon}>
+          <p className={styles.comingSoonText}>
+            Projects are on the way — I'm building and documenting my work. Meanwhile, explore my{' '}
+            <Link to="/skills" className={styles.comingSoonLink}>
+              skills
+            </Link>{' '}
+            and{' '}
+            <Link to="/education" className={styles.comingSoonLink}>
+              education
+            </Link>
+            .
+          </p>
+        </Reveal>
+      ) : (
+        <div className={styles.grid}>
+          <ProjectGrid projects={FEATURED_PROJECTS} />
+        </div>
+      )}
     </section>
   )
 }

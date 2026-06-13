@@ -1,40 +1,34 @@
-import type { ExperienceItem } from '@/types/content'
+import { experienceSchema } from '@/lib/validations'
 
-export const EXPERIENCE: ExperienceItem[] = [
+export const EXPERIENCE = experienceSchema.array().parse([
   {
-    role: 'Senior Full Stack Developer',
-    company: 'TechNova Solutions',
-    period: 'May 2022 — Present',
-    mark: '◆',
+    role: 'Member',
+    company: "ICT Students' Circle — University of Ruhuna",
+    period: 'Jan 2024 — Present',
+    mark: 'IC',
     bg: 'var(--navy)',
     fg: '#F0F0DB',
-    detail: 'Lead developer on the flagship SaaS platform; mentored a team of 5 and cut load times by 40%.',
+    detail:
+      'Actively involved in ICT academic and student activities — supporting collaboration, teamwork, and knowledge-sharing among students.',
   },
   {
-    role: 'Full Stack Developer',
-    company: 'DevCraft Labs',
-    period: 'Jan 2020 — Apr 2022',
-    mark: 'de',
+    role: 'Batch Representative',
+    company: 'Ruhuna Tamil Union — University of Ruhuna',
+    period: 'Apr 2025 — Present',
+    mark: 'TU',
     bg: 'var(--slate)',
     fg: 'var(--navy)',
-    detail: 'Built and shipped client web apps end-to-end across fintech and e-commerce.',
+    detail:
+      'Representing the batch in the Tamil Union — bridging students and the union, coordinating activities, and helping run academic, cultural, and community events.',
   },
   {
-    role: 'Frontend Developer',
-    company: 'Webify Agency',
-    period: 'Jun 2018 — Dec 2019',
-    mark: 'W',
+    role: 'Volunteer',
+    company: 'Community English Program (CEP) — The Tea Leaf Centre',
+    period: 'Jan 2023 — Dec 2023',
+    mark: 'CEP',
     bg: 'var(--tan)',
     fg: 'var(--navy)',
-    detail: 'Crafted responsive, accessible marketing sites and design systems for 12+ brands.',
+    detail:
+      'Supported English-language teaching sessions and helped students improve communication — gaining experience in teamwork, leadership, public speaking, and student support.',
   },
-  {
-    role: 'Junior Developer',
-    company: 'CodeLaunch',
-    period: 'Jan 2017 — May 2018',
-    mark: '</>',
-    bg: 'var(--surface-2)',
-    fg: 'var(--text)',
-    detail: 'Started my journey writing features and squashing bugs in a fast-paced startup.',
-  },
-]
+])
