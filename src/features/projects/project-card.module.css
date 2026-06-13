@@ -24,7 +24,7 @@
 .preview {
   position: relative;
   margin: 14px 14px 0;
-  height: 158px;
+  aspect-ratio: 16 / 9;
   border-radius: 14px;
   background: linear-gradient(150deg, #1b1e30, #252b45);
   overflow: hidden;
