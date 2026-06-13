@@ -25,3 +25,6 @@ dist-ssr
 
 # blaxx-memory local knowledge vault (tooling state, not app source)
 .blaxx
+
+# wrangler local state
+.wrangler

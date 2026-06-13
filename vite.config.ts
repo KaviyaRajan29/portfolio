@@ -4,8 +4,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // Served from https://KaviyaRajan29.github.io/portfolio/ — the GitHub Pages project subpath.
-  base: '/portfolio/',
   plugins: [react()],
   resolve: {
     alias: {
