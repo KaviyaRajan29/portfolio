@@ -1,10 +1,15 @@
 import { Link } from 'react-router-dom'
+import { m, useReducedMotion } from 'motion/react'
 import { LuArrowUpRight } from 'react-icons/lu'
 import type { Project } from '@/types/content'
 import { Tag } from '@/components/ui/tag'
 import styles from './project-card.module.css'
 
+const EASE = [0.22, 1, 0.36, 1] as const
+
 export function ProjectCard({ project }: { project: Project }) {
+  const reduced = useReducedMotion()
+
   return (
     <Link
       to={`/projects/${project.slug}`}
@@ -13,7 +18,14 @@ export function ProjectCard({ project }: { project: Project }) {
     >
       <div className={styles.preview}>
         {project.image ? (
-          <img className={styles.previewImg} src={project.image} alt="" loading="lazy" />
+          <m.img
+            className={styles.previewImg}
+            src={project.image}
+            alt=""
+            loading="lazy"
+            whileHover={reduced ? undefined : { scale: 1.06 }}
+            transition={{ duration: 0.4, ease: EASE }}
+          />
         ) : (
           <>
             <div

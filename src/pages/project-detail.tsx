@@ -1,5 +1,6 @@
 import type { LoaderFunctionArgs } from 'react-router-dom'
 import { Link, useLoaderData } from 'react-router-dom'
+import { m, useReducedMotion } from 'motion/react'
 import { LuArrowLeft, LuArrowUpRight, LuCheck, LuExternalLink } from 'react-icons/lu'
 import { SiGithub } from 'react-icons/si'
 import type { Project } from '@/types/content'
@@ -11,6 +12,8 @@ import { Reveal } from '@/components/ui/reveal'
 import { Tag } from '@/components/ui/tag'
 import btn from '@/components/ui/button.module.css'
 import styles from './project-detail.module.css'
+
+const EASE = [0.22, 1, 0.36, 1] as const
 
 type LoaderData = { project: Project; next: Project }
 
@@ -25,6 +28,23 @@ export async function loader({ params }: LoaderFunctionArgs): Promise<LoaderData
 
 export function Component() {
   const { project, next } = useLoaderData() as LoaderData
+  const reduced = useReducedMotion()
+
+  // Variants (not initial/animate) so the parent <Reveal>'s hidden→show drives
+  // the hero art too; under reduced motion we omit them (the parent still fades).
+  const artVariants = reduced
+    ? undefined
+    : {
+        hidden: { scale: 0.95 },
+        show: {
+          scale: 1,
+          y: [0, -10, 0],
+          transition: {
+            scale: { duration: 0.7, ease: EASE },
+            y: { duration: 7, ease: 'easeInOut' as const, repeat: Infinity, delay: 0.9 },
+          },
+        },
+      }
 
   return (
     <article className={cn('container', styles.wrap)}>
@@ -63,7 +83,7 @@ export function Component() {
             </a>
           </div>
         </div>
-        <div className={styles.heroArt}>
+        <m.div className={styles.heroArt} variants={artVariants}>
           {project.image ? (
             <img
               className={styles.heroImg}
@@ -83,7 +103,7 @@ export function Component() {
               </span>
             </>
           )}
-        </div>
+        </m.div>
       </Reveal>
 
       <div className={styles.grid}>
