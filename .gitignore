@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# blaxx-memory local knowledge vault (tooling state, not app source)
+.blaxx
