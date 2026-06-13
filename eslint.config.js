@@ -19,4 +19,25 @@ export default defineConfig([
       globals: globals.browser,
     },
   },
+  {
+    // React Router route modules export loader/action/etc. alongside Component.
+    files: ['src/pages/**/*.{ts,tsx}'],
+    rules: {
+      'react-refresh/only-export-components': [
+        'error',
+        {
+          allowConstantExport: true,
+          allowExportNames: [
+            'loader',
+            'action',
+            'ErrorBoundary',
+            'meta',
+            'handle',
+            'links',
+            'shouldRevalidate',
+          ],
+        },
+      ],
+    },
+  },
 ])

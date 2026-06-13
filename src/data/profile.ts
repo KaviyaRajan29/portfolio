@@ -1,6 +1,6 @@
-import type { Profile } from '@/types/content'
+import { profileSchema } from '@/lib/validations'
 
-export const PROFILE: Profile = {
+export const PROFILE = profileSchema.parse({
   name: 'Kaviya Rajan',
   brand: 'Kaviya.dev',
   badge: 'Full Stack Developer',
@@ -16,4 +16,4 @@ export const PROFILE: Profile = {
   ],
   email: 'hello@kaviya.dev',
   year: 2026,
-}
+})

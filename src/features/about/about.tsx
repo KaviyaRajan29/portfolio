@@ -1,3 +1,5 @@
+import { LuDownload, LuUser } from 'react-icons/lu'
+import { cn } from '@/lib/cn'
 import { Reveal } from '@/components/ui/reveal'
 import { SectionHeading } from '@/components/ui/section-heading'
 import { ButtonLink } from '@/components/ui/button-link'
@@ -6,9 +8,9 @@ import styles from './about.module.css'
 
 export function About() {
   return (
-    <Reveal as="section" id="about" index={0} className={styles.col}>
-      <div className={styles.card}>
-        <SectionHeading icon="◍" title="About Me" iconFontSize={19} />
+    <section className={cn('container', styles.section)}>
+      <Reveal className={styles.card}>
+        <SectionHeading icon={<LuUser aria-hidden />} title="About Me" iconFontSize={20} />
         <p className={styles.blurb}>{PROFILE.aboutBlurb}</p>
         <div className={styles.stats}>
           {PROFILE.stats.map((stat) => (
@@ -19,9 +21,9 @@ export function About() {
           ))}
         </div>
         <ButtonLink variant="navy" size="sm" href="#">
-          Download Résumé <span aria-hidden="true">↓</span>
+          Download Résumé <LuDownload aria-hidden />
         </ButtonLink>
-      </div>
-    </Reveal>
+      </Reveal>
+    </section>
   )
 }

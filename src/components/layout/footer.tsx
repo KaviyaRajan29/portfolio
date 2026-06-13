@@ -1,24 +1,20 @@
-import type { MouseEvent } from 'react'
+import { Link } from 'react-router-dom'
+import { LuMail, LuSend } from 'react-icons/lu'
 import { cn } from '@/lib/cn'
 import { Reveal } from '@/components/ui/reveal'
-import { ButtonLink } from '@/components/ui/button-link'
 import { SOCIALS } from '@/data/socials'
+import { SOCIAL_ICONS } from '@/lib/icons'
 import { PROFILE } from '@/data/profile'
-import { scrollToSection } from '@/lib/scroll'
+import btn from '@/components/ui/button.module.css'
 import styles from './footer.module.css'
 
 export function Footer() {
-  const handleContact = (event: MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault()
-    scrollToSection('contact')
-  }
-
   return (
     <footer className={cn('container', styles.footer)}>
       <Reveal className={styles.banner}>
         <div className={styles.lead}>
-          <span className={styles.icon} aria-hidden="true">
-            ✈
+          <span className={styles.icon} aria-hidden>
+            <LuSend />
           </span>
           <div>
             <div className={styles.title}>Let's build something amazing together.</div>
@@ -29,11 +25,12 @@ export function Footer() {
         </div>
 
         <div className={styles.actions}>
-          <ButtonLink variant="cream" size="sm" href="#contact" onClick={handleContact}>
-            Contact Me ✉
-          </ButtonLink>
+          <Link to="/contact" className={cn(btn.btn, btn.cream, btn.sm)}>
+            Contact Me <LuMail aria-hidden />
+          </Link>
           <div className={styles.socials}>
             {SOCIALS.map((social) => {
+              const Icon = SOCIAL_ICONS[social.label]
               const external = social.href.startsWith('http')
               return (
                 <a
@@ -44,7 +41,7 @@ export function Footer() {
                   target={external ? '_blank' : undefined}
                   rel={external ? 'noopener noreferrer' : undefined}
                 >
-                  <span aria-hidden="true">{social.icon}</span>
+                  {Icon ? <Icon aria-hidden /> : null}
                 </a>
               )
             })}

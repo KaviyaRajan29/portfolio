@@ -26,8 +26,7 @@
   background: var(--surface-2);
   display: grid;
   place-items: center;
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 17px;
   flex-shrink: 0;
 }
 

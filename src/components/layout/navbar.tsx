@@ -1,51 +1,65 @@
-import type { MouseEvent } from 'react'
+import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import { motion } from 'motion/react'
+import { LuMenu, LuX } from 'react-icons/lu'
 import { cn } from '@/lib/cn'
 import { NAV_ITEMS } from '@/data/nav'
 import { PROFILE } from '@/data/profile'
-import { scrollToSection } from '@/lib/scroll'
 import { ThemeToggle } from './theme-toggle'
 import styles from './navbar.module.css'
 
-type NavbarProps = {
-  activeId: string
-}
-
-export function Navbar({ activeId }: NavbarProps) {
+export function Navbar() {
+  const [open, setOpen] = useState(false)
   const [brandName, brandTld] = PROFILE.brand.split('.')
-
-  const handleNav = (id: string) => (event: MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault()
-    scrollToSection(id)
-  }
+  const close = () => setOpen(false)
 
   return (
     <nav className={styles.nav}>
       <div className={cn('container', styles.inner)}>
-        <a href="#home" onClick={handleNav('home')} className={styles.logo}>
+        <Link to="/" className={styles.logo} onClick={close}>
           <span className={styles.logoMark}>K</span>
           <span className={styles.logoText}>
             {brandName}
             <span className={styles.logoTld}>.{brandTld}</span>
           </span>
-        </a>
+        </Link>
 
-        <div className={styles.links}>
-          {NAV_ITEMS.map((item) => {
-            const active = activeId === item.id
-            return (
-              <a
-                key={item.id}
-                href={`#${item.id}`}
-                onClick={handleNav(item.id)}
-                aria-current={active ? 'page' : undefined}
-                className={cn(styles.link, active && styles.linkActive)}
-              >
-                {item.label}
-                <span className={styles.dot} aria-hidden="true" />
-              </a>
-            )
-          })}
+        <div className={cn(styles.links, open && styles.linksOpen)}>
+          {NAV_ITEMS.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.to === '/'}
+              onClick={close}
+              className={({ isActive }) => cn(styles.link, isActive && styles.linkActive)}
+            >
+              {({ isActive }) => (
+                <>
+                  {item.label}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-active"
+                      className={styles.activeDot}
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </>
+              )}
+            </NavLink>
+          ))}
+        </div>
+
+        <div className={styles.actions}>
           <ThemeToggle />
+          <button
+            type="button"
+            className={styles.menuBtn}
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? <LuX aria-hidden /> : <LuMenu aria-hidden />}
+          </button>
         </div>
       </div>
     </nav>

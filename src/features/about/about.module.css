@@ -1,10 +1,11 @@
-.col {
-  flex: 1 1 360px;
-  min-width: 300px;
+.section {
+  padding-top: 52px;
+  padding-bottom: 72px;
 }
 
 .card {
-  height: 100%;
+  max-width: 760px;
+  margin: 0 auto;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 22px;

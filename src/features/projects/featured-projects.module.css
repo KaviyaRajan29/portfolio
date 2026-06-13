@@ -1,0 +1,24 @@
+.section {
+  padding-top: 8px;
+  padding-bottom: 72px;
+}
+
+.viewAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-2);
+  text-decoration: none;
+  transition: color 0.25s ease, gap 0.25s ease;
+}
+
+.viewAll:hover {
+  color: var(--text);
+  gap: 10px;
+}
+
+.grid {
+  margin-top: 24px;
+}

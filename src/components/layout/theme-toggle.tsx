@@ -1,3 +1,4 @@
+import { LuMoon, LuSun } from 'react-icons/lu'
 import { useTheme } from '@/app/theme-context'
 import styles from './theme-toggle.module.css'
 
@@ -14,7 +15,7 @@ export function ThemeToggle() {
       aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
       aria-pressed={isDark}
     >
-      <span aria-hidden="true">{isDark ? '☀' : '☾'}</span>
+      {isDark ? <LuSun aria-hidden /> : <LuMoon aria-hidden />}
     </button>
   )
 }

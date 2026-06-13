@@ -1,3 +1,4 @@
+import { LuBriefcase } from 'react-icons/lu'
 import { cn } from '@/lib/cn'
 import { Reveal } from '@/components/ui/reveal'
 import { SectionHeading } from '@/components/ui/section-heading'
@@ -9,7 +10,7 @@ export function Experience() {
   return (
     <section id="experience" className={cn('container', styles.section)}>
       <Reveal index={0} className={styles.heading}>
-        <SectionHeading icon="⌚" title="Experience" size="lg" iconFontSize={18} />
+        <SectionHeading icon={<LuBriefcase aria-hidden />} title="Experience" size="lg" iconFontSize={20} />
       </Reveal>
 
       <div className={styles.timeline}>

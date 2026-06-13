@@ -1,0 +1,50 @@
+.section {
+  padding-top: 52px;
+  padding-bottom: 80px;
+}
+
+.lead {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-2);
+  max-width: 560px;
+  margin: 16px 0 22px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+.filter {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-2);
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.filter:hover {
+  color: var(--text);
+  border-color: var(--slate);
+}
+
+.filterActive {
+  background: var(--navy);
+  color: #f0f0db;
+  border-color: var(--navy);
+}
+
+.filterActive:hover {
+  color: #f0f0db;
+}

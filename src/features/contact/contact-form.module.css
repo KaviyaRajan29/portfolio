@@ -67,6 +67,13 @@
   box-shadow: var(--shadow-lg);
 }
 
+.submit:disabled {
+  opacity: 0.7;
+  cursor: default;
+  transform: none;
+  box-shadow: var(--shadow);
+}
+
 .success {
   text-align: center;
   padding: 38px 10px;

@@ -1,12 +1,10 @@
-import type { NavItem } from '@/types/content'
+import { navItemSchema } from '@/lib/validations'
 
-export const NAV_ITEMS: NavItem[] = [
-  { label: 'Home', id: 'home' },
-  { label: 'About', id: 'about' },
-  { label: 'Skills', id: 'skills' },
-  { label: 'Projects', id: 'projects' },
-  { label: 'Experience', id: 'experience' },
-  { label: 'Contact', id: 'contact' },
-]
-
-export const SECTION_IDS = NAV_ITEMS.map((item) => item.id)
+export const NAV_ITEMS = navItemSchema.array().parse([
+  { label: 'Home', to: '/' },
+  { label: 'About', to: '/about' },
+  { label: 'Skills', to: '/skills' },
+  { label: 'Projects', to: '/projects' },
+  { label: 'Experience', to: '/experience' },
+  { label: 'Contact', to: '/contact' },
+])

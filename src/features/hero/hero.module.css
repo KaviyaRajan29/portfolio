@@ -66,9 +66,10 @@
 }
 
 .badgeMark {
-  font-family: var(--font-mono);
+  display: inline-flex;
+  align-items: center;
   color: var(--navy);
-  font-weight: 600;
+  font-size: 15px;
 }
 
 .name {

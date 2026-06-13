@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useReducedMotion } from './use-reduced-motion'
+import { useReducedMotion } from 'motion/react'
 
 type TypingOptions = {
   typeMin?: number

@@ -1,9 +1,10 @@
-import type { MouseEvent } from 'react'
+import { Link } from 'react-router-dom'
+import { motion } from 'motion/react'
+import { LuArrowRight, LuCode, LuMail } from 'react-icons/lu'
 import { cn } from '@/lib/cn'
-import { Reveal } from '@/components/ui/reveal'
-import { ButtonLink } from '@/components/ui/button-link'
 import { PROFILE } from '@/data/profile'
-import { scrollToSection } from '@/lib/scroll'
+import { fadeUp, staggerContainer } from '@/components/motion/variants'
+import btn from '@/components/ui/button.module.css'
 import { TypedRoles } from './typed-roles'
 import { CodeEditor } from './code-editor'
 import styles from './hero.module.css'
@@ -11,56 +12,59 @@ import styles from './hero.module.css'
 export function Hero() {
   const [firstName, lastName] = PROFILE.name.split(' ')
 
-  const goTo = (id: string) => (event: MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault()
-    scrollToSection(id)
-  }
-
   return (
-    <section id="home" className={styles.section}>
-      <div className={styles.aurora} aria-hidden="true">
+    <section className={styles.section}>
+      <div className={styles.aurora} aria-hidden>
         <span className={styles.blobTan} />
         <span className={styles.blobSlate} />
       </div>
 
       <div className={cn('container', styles.inner)}>
-        <div className={styles.left}>
-          <Reveal index={0} className={styles.badge}>
-            <span className={styles.badgeMark}>{'</>'}</span> {PROFILE.badge}
-          </Reveal>
+        <motion.div
+          className={styles.left}
+          variants={staggerContainer}
+          initial="hidden"
+          animate="show"
+        >
+          <motion.div className={styles.badge} variants={fadeUp}>
+            <span className={styles.badgeMark}>
+              <LuCode aria-hidden />
+            </span>{' '}
+            {PROFILE.badge}
+          </motion.div>
 
-          <Reveal as="h1" index={1} className={styles.name}>
+          <motion.h1 className={styles.name} variants={fadeUp}>
             {firstName}
             <br />
             {lastName}
-          </Reveal>
+          </motion.h1>
 
-          <Reveal index={2} className={styles.roles}>
+          <motion.div className={styles.roles} variants={fadeUp}>
             <TypedRoles />
-          </Reveal>
+          </motion.div>
 
-          <Reveal as="p" index={3} className={styles.blurb}>
+          <motion.p className={styles.blurb} variants={fadeUp}>
             {PROFILE.heroBlurb}
-          </Reveal>
+          </motion.p>
 
-          <Reveal index={4} className={styles.ctas}>
-            <ButtonLink variant="primary" href="#projects" onClick={goTo('projects')}>
-              View Projects <span aria-hidden="true">→</span>
-            </ButtonLink>
-            <ButtonLink variant="secondary" href="#contact" onClick={goTo('contact')}>
-              Contact Me <span aria-hidden="true">✉</span>
-            </ButtonLink>
-          </Reveal>
+          <motion.div className={styles.ctas} variants={fadeUp}>
+            <Link to="/projects" className={cn(btn.btn, btn.primary, btn.md)}>
+              View Projects <LuArrowRight aria-hidden />
+            </Link>
+            <Link to="/contact" className={cn(btn.btn, btn.secondary, btn.md)}>
+              Contact Me <LuMail aria-hidden />
+            </Link>
+          </motion.div>
 
-          <Reveal index={5} className={styles.availability}>
-            <span className={styles.availabilityDot} aria-hidden="true" />
+          <motion.div className={styles.availability} variants={fadeUp}>
+            <span className={styles.availabilityDot} aria-hidden />
             Available for new opportunities
-          </Reveal>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        <Reveal index={2} className={styles.right}>
+        <motion.div className={styles.right} variants={fadeUp} initial="hidden" animate="show">
           <CodeEditor />
-        </Reveal>
+        </motion.div>
       </div>
     </section>
   )
