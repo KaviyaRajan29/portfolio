@@ -1,73 +1,105 @@
-# React + TypeScript + Vite
+# Kaviya Rajan — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio for **Kaviya Rajan**, an ICT undergraduate at the University of Ruhuna and
+aspiring full-stack developer. A routed, animated, fully type-safe single-page app built with React,
+TypeScript, and Vite.
 
-Currently, two official plugins are available:
+**Live:** https://kaviya.me/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler 
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Single-page feel, real routes** — React Router v7 data router with a route per section
+  (`/about`, `/skills`, `/projects`, `/projects/:slug`, `/experience`, `/education`, `/contact`),
+  lazy-loaded page modules, scroll restoration, and a 404 route.
+- **Motion throughout** — page transitions, scroll-reveal entrances, an animated hero "live
+  dashboard" card, project hover-zoom, and a floating detail-page preview — via
+  [Motion](https://motion.dev) (Framer Motion) with `LazyMotion` so the feature bundle is
+  code-split. Honors `prefers-reduced-motion`.
+- **Type-safe content** — all content and untrusted edges are validated with [Zod](https://zod.dev);
+  TypeScript types are inferred from the schemas, so data and types can't drift.
+- **Validated contact form** — `react-hook-form` + `@hookform/resolvers` (Zod), posting to a real
+  endpoint when configured, with a simulated-send fallback.
+- **Light / dark theme**, responsive layout, accessible markup, and `react-icons` brand/UI icons.
+- **Projects showcase** — project previews as lightweight SVG graphics.
 
-## Expanding the ESLint configuration
+## Tech stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+| Area | Choice |
+| --- | --- |
+| Framework | React 19 + TypeScript |
+| Build tool | Vite 8 |
+| Routing | React Router 7 (data router) |
+| Animation | Motion 12 (Framer Motion) via `LazyMotion` |
+| Validation | Zod 4 |
+| Forms | react-hook-form + @hookform/resolvers |
+| Styling | CSS Modules |
+| Icons | react-icons |
+| Hosting | Cloudflare Workers (Static Assets) via GitHub Actions |
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+**Prerequisites:** Node.js 22+ and npm.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+# install dependencies
+npm install
+
+# start the dev server (http://localhost:5173)
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Scripts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the Vite dev server with HMR. |
+| `npm run build` | Type-check (`tsc -b`) and build to `dist/`. |
+| `npm run preview` | Serve the production build locally (http://localhost:4173). |
+| `npm run lint` | Run ESLint over the project. |
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Configuration
+
+Client env vars are validated at boot in `src/config/env.ts` (only `VITE_`-prefixed vars are exposed
+by Vite). Create a `.env` (or `.env.local`) if you want the contact form to post to a real endpoint:
+
+```bash
+# Optional. Where the contact form POSTs. If unset, the form simulates a send.
+VITE_CONTACT_ENDPOINT="https://your-form-endpoint.example.com"
 ```
+
+## Project structure
+
+Feature-first: each section owns its components and styles, with shared primitives and content
+factored out.
+
+```
+src/
+├── app/          # router, root layout, theme provider
+├── assets/       # project preview SVGs
+├── components/   # layout, ui, motion, errors (shared, cross-feature)
+├── config/       # env parsing/validation
+├── data/         # content (profile, projects, skills, experience, education, …)
+├── features/     # hero, about, skills, projects, experience, education, contact
+├── hooks/        # reusable hooks
+├── lib/          # validations (Zod), icons, helpers
+├── pages/        # lazy route modules (loaders + Component)
+├── styles/       # global styles, tokens
+└── types/        # inferred content types
+```
+
+## Deployment
+
+The site is hosted on **Cloudflare Workers (Static Assets)** and deploys automatically from `main`
+via GitHub Actions (`.github/workflows/deploy.yml`), served at the custom domain
+[kaviya.me](https://kaviya.me/). Worker config lives in `wrangler.jsonc`. See
+[DEPLOYMENT.md](DEPLOYMENT.md) for the required secrets, token scopes, and custom-domain setup.
+
+## License
+
+See [LICENSE](LICENSE).
+
+---
+
+Built by Kaviya Rajan.
