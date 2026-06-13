@@ -86,7 +86,7 @@
   position: relative;
   flex: 1 1 380px;
   max-width: 520px;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   border-radius: 16px;
   background: linear-gradient(150deg, #1b1e30, #252b45);
   display: grid;
