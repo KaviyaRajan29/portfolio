@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 842" width="1480" height="842" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+  <defs>
+    <pattern id="dots" width="15" height="15" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.9" fill="#5d7f70" opacity="0.22"/>
+    </pattern>
+  </defs>
+
+  <!-- panels -->
+  <rect x="0" y="0" width="872" height="842" fill="#1b1b34"/>
+  <rect x="872" y="0" width="608" height="842" fill="#a9c6b7"/>
+  <rect x="872" y="0" width="608" height="842" fill="url(#dots)"/>
+
+  <!-- ===== LEFT PANEL ===== -->
+  <!-- theme toggle -->
+  <svg x="831" y="24" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8a8da2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+  </svg>
+
+  <!-- logo -->
+  <rect x="217" y="149" width="34" height="34" rx="9" fill="#a8c5b6"/>
+  <text x="234" y="173" font-size="18" font-weight="700" fill="#1d3a2d" text-anchor="middle">L</text>
+  <text x="262" y="173" font-size="17" font-weight="700" fill="#f3f4ee">Ledger Pro</text>
+
+  <!-- heading -->
+  <text x="217" y="250" font-size="35" font-weight="800" fill="#edefe4">Welcome back</text>
+  <text x="217" y="274" font-size="13" fill="#8a8da2">Sign in to your Ledger Pro workspace.</text>
+
+  <!-- email -->
+  <text x="217" y="318" font-size="11" font-weight="500" fill="#a8aabb">Email address</text>
+  <rect x="217" y="330" width="437" height="40" rx="7" fill="none" stroke="#34344e" stroke-width="1.2"/>
+  <svg x="231" y="343" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8a8da2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+  </svg>
+  <text x="255" y="355" font-size="13" fill="#8a8da2">you@company.com</text>
+
+  <!-- password -->
+  <text x="217" y="398" font-size="11" font-weight="500" fill="#a8aabb">Password</text>
+  <text x="654" y="398" font-size="11" fill="#b0b2c0" text-anchor="end">Forgot?</text>
+  <rect x="217" y="410" width="437" height="40" rx="7" fill="none" stroke="#34344e" stroke-width="1.2"/>
+  <svg x="231" y="423" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#8a8da2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+  </svg>
+  <text x="255" y="435" font-size="13" fill="#8a8da2">Enter your password</text>
+  <svg x="626" y="423" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8a8da2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/>
+  </svg>
+
+  <!-- remember me -->
+  <rect x="217" y="466" width="16" height="16" rx="4" fill="#a8c5b6"/>
+  <svg x="217" y="466" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1d3a2d" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 6 9 17l-5-5"/>
+  </svg>
+  <text x="242" y="478" font-size="12" fill="#b0b2c0">Keep me signed in for 30 days</text>
+
+  <!-- sign in button -->
+  <rect x="217" y="500" width="437" height="42" rx="8" fill="#a8c5b6"/>
+  <text x="418" y="526" font-size="14" font-weight="600" fill="#1d3a2d" text-anchor="middle">Sign in</text>
+  <svg x="450" y="513" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#1d3a2d" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+  </svg>
+
+  <!-- divider -->
+  <line x1="217" y1="575" x2="410" y2="575" stroke="#34344e" stroke-width="1"/>
+  <line x1="462" y1="575" x2="654" y2="575" stroke="#34344e" stroke-width="1"/>
+  <text x="436" y="579" font-size="12" fill="#8a8da2" text-anchor="middle">or</text>
+
+  <!-- google button -->
+  <rect x="217" y="607" width="437" height="44" rx="8" fill="none" stroke="#34344e" stroke-width="1.2"/>
+  <text x="436" y="634" font-size="14" font-weight="600" fill="#edefe4" text-anchor="middle">Continue with Google</text>
+
+  <!-- create account -->
+  <text x="436" y="690" font-size="12" text-anchor="middle"><tspan fill="#8a8da2">Don't have an account? </tspan><tspan fill="#cdd0db" font-weight="500">Create one</tspan></text>
+
+  <!-- ===== RIGHT PANEL ===== -->
+  <!-- top wordmark -->
+  <text x="918" y="60" font-size="15" font-weight="700" fill="#243a30">L</text>
+  <text x="944" y="60" font-size="14" font-weight="600" fill="#243a30">Ledger Pro</text>
+
+  <!-- receipt illustration -->
+  <g stroke="#3a5749" stroke-linecap="round">
+    <path d="M1088 258 L1260 258 Q1266 258 1266 264 L1266 512 L1247.6 543 L1229.2 512 L1210.8 543 L1192.4 512 L1174 543 L1155.6 512 L1137.2 543 L1118.8 512 L1100.4 543 L1082 512 L1082 264 Q1082 258 1088 258 Z" fill="#ffffff" fill-opacity="0.06" stroke-width="1.6"/>
+    <line x1="1114" y1="306" x2="1198" y2="306" stroke-width="1.8"/>
+    <line x1="1210" y1="306" x2="1234" y2="306" stroke-width="1.8"/>
+    <line x1="1114" y1="338" x2="1188" y2="338" stroke-width="1.8"/>
+    <line x1="1210" y1="338" x2="1234" y2="338" stroke-width="1.8"/>
+    <line x1="1114" y1="370" x2="1202" y2="370" stroke-width="1.8"/>
+    <line x1="1214" y1="370" x2="1234" y2="370" stroke-width="1.8"/>
+    <line x1="1114" y1="402" x2="1166" y2="402" stroke-width="1.8"/>
+    <line x1="1114" y1="448" x2="1234" y2="448" stroke-width="1.6" stroke-dasharray="1.5 3.5"/>
+  </g>
+  <text x="1114" y="491" font-size="13" font-weight="700" fill="#2f4a3c" letter-spacing="1" font-family="'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace">TOTAL  4,250</text>
+
+  <!-- headline -->
+  <text x="918" y="741" font-size="24" font-weight="700" fill="#20392e">The calmest way to run your</text>
+  <text x="918" y="773" font-size="24" font-weight="700" fill="#20392e">shop.</text>
+  <text x="918" y="804" font-size="13" fill="#4a6356">POS · Inventory · Accounting</text>
+</svg>

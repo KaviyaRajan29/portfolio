@@ -1,6 +1,6 @@
 import { projectSchema, type Project } from '@/lib/validations'
-import eventhubImg from '@/assets/eventhub.png'
-import ledgerproImg from '@/assets/leadgerpro.png'
+import eventhubImg from '@/assets/eventhub.svg'
+import ledgerproImg from '@/assets/ledgerpro.svg'
 import portfolioImg from '@/assets/kaviya-portfolio.png'
 
 // Kaviya's real work: two full-stack group projects built with the Byte Squad team
