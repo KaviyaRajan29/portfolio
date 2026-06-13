@@ -8,6 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -16,12 +17,12 @@ jobs:
           node-version: '22'
           cache: 'npm'
 
-      - run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-      - run: npm run build
+      - name: Build project
+        run: npm run build
         env:
-          # Optional — set as a repo secret to enable the live contact form.
-          # Unset → the form uses its simulated-send fallback.
           VITE_CONTACT_ENDPOINT: ${{ secrets.VITE_CONTACT_ENDPOINT }}
 
       - name: Deploy to Cloudflare Workers
@@ -29,5 +30,4 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          # The action installs its own wrangler — no need for it in package.json.
           wranglerVersion: '4.100.0'
