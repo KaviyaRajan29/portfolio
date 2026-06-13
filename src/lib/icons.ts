@@ -16,6 +16,7 @@ import {
   SiPostgresql,
   SiReact,
   SiReactrouter,
+  SiRedux,
   SiSpringboot,
   SiTailwindcss,
   SiTypescript,
@@ -57,6 +58,7 @@ export const SKILL_ICONS: Record<string, IconType> = {
   Vite: SiVite,
   'Framer Motion': SiFramer,
   'React Router': SiReactrouter,
+  Redux: SiRedux,
   Zod: SiZod,
 }
 

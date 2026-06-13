@@ -32,8 +32,9 @@ export function Skills() {
           iconFontSize={20}
         />
         <p className={styles.lead}>
-          The tools I work with — from Java and databases to frontend and backend web development —
-          alongside the people skills I've built through teaching, leadership, and community work.
+          The tools I work with — from Java and Spring Boot to React, TypeScript, and SQL
+          databases — sharpened on real full-stack team projects, alongside the people skills I've
+          built through teaching, leadership, and community work.
         </p>
         <div className={styles.stats}>
           {STATS.map((stat) => (
