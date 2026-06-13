@@ -43,14 +43,16 @@ export function Component() {
           <h1 className={styles.title}>{project.title}</h1>
           <p className={styles.lead}>{project.longDescription}</p>
           <div className={styles.actions}>
-            <a
-              href={project.liveUrl}
-              className={cn(btn.btn, btn.primary, btn.md)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live demo <LuExternalLink aria-hidden />
-            </a>
+            {project.liveUrl ? (
+              <a
+                href={project.liveUrl}
+                className={cn(btn.btn, btn.primary, btn.md)}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live demo <LuExternalLink aria-hidden />
+              </a>
+            ) : null}
             <a
               href={project.repoUrl}
               className={cn(btn.btn, btn.secondary, btn.md)}

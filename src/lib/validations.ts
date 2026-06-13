@@ -45,7 +45,7 @@ export const projectSchema = z.object({
   highlights: z.array(z.string()),
   tags: z.array(z.string()),
   tech: z.array(z.string()),
-  liveUrl: z.string(),
+  liveUrl: z.string().optional(),
   repoUrl: z.string(),
   featured: z.boolean(),
 })

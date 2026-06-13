@@ -2,16 +2,25 @@ import type { IconType } from 'react-icons'
 import {
   SiC,
   SiCss,
+  SiDocker,
   SiFacebook,
+  SiFramer,
   SiGit,
   SiGithub,
   SiHtml5,
   SiInstagram,
   SiJavascript,
   SiMysql,
+  SiNestjs,
   SiNodedotjs,
+  SiPostgresql,
   SiReact,
+  SiReactrouter,
   SiSpringboot,
+  SiTailwindcss,
+  SiTypescript,
+  SiVite,
+  SiZod,
 } from 'react-icons/si'
 import { FaJava, FaLinkedinIn } from 'react-icons/fa6'
 import {
@@ -40,6 +49,15 @@ export const SKILL_ICONS: Record<string, IconType> = {
   'Node.js': SiNodedotjs,
   Git: SiGit,
   'Spring Boot': SiSpringboot,
+  TypeScript: SiTypescript,
+  PostgreSQL: SiPostgresql,
+  Docker: SiDocker,
+  NestJS: SiNestjs,
+  'Tailwind CSS': SiTailwindcss,
+  Vite: SiVite,
+  'Framer Motion': SiFramer,
+  'React Router': SiReactrouter,
+  Zod: SiZod,
 }
 
 /** Professional / soft skill → Lucide icon. */
