@@ -12,26 +12,36 @@ export function ProjectCard({ project }: { project: Project }) {
       aria-label={`${project.title} — view details`}
     >
       <div className={styles.preview}>
-        <div
-          className={styles.previewGlow}
-          style={{ background: `radial-gradient(circle, ${project.accent}, transparent 68%)` }}
-          aria-hidden
-        />
-        <div className={styles.previewHead}>
-          <span className={styles.previewGlyph} style={{ background: project.accent }} aria-hidden>
-            {project.glyph}
-          </span>
-          {project.title}
-        </div>
-        <div className={styles.previewBody} aria-hidden>
-          <div className={styles.barWide} />
-          <div className={styles.barNarrow} />
-          <div className={styles.previewRow}>
-            <div className={styles.previewTile} />
-            <div className={styles.previewTile} />
-            <div className={styles.previewTileAccent} style={{ background: project.accent }} />
-          </div>
-        </div>
+        {project.image ? (
+          <img className={styles.previewImg} src={project.image} alt="" loading="lazy" />
+        ) : (
+          <>
+            <div
+              className={styles.previewGlow}
+              style={{ background: `radial-gradient(circle, ${project.accent}, transparent 68%)` }}
+              aria-hidden
+            />
+            <div className={styles.previewHead}>
+              <span
+                className={styles.previewGlyph}
+                style={{ background: project.accent }}
+                aria-hidden
+              >
+                {project.glyph}
+              </span>
+              {project.title}
+            </div>
+            <div className={styles.previewBody} aria-hidden>
+              <div className={styles.barWide} />
+              <div className={styles.barNarrow} />
+              <div className={styles.previewRow}>
+                <div className={styles.previewTile} />
+                <div className={styles.previewTile} />
+                <div className={styles.previewTileAccent} style={{ background: project.accent }} />
+              </div>
+            </div>
+          </>
+        )}
       </div>
 
       <div className={styles.body}>

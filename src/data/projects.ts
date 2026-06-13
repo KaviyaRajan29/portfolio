@@ -1,4 +1,7 @@
 import { projectSchema, type Project } from '@/lib/validations'
+import eventhubImg from '@/assets/eventhub.png'
+import ledgerproImg from '@/assets/leadgerpro.png'
+import portfolioImg from '@/assets/kaviya-portfolio.png'
 
 // Kaviya's real work: two full-stack group projects built with the Byte Squad team
 // (repos live under teammate Anpu21) plus her own portfolio. `liveUrl` is omitted where
@@ -24,6 +27,7 @@ export const PROJECTS = projectSchema.array().parse([
     tags: ['Full-Stack', 'React', 'Team Project'],
     tech: ['Java', 'Spring Boot', 'React', 'TypeScript', 'PostgreSQL', 'Docker'],
     repoUrl: 'https://github.com/Anpu21/eventhub',
+    image: eventhubImg,
     featured: true,
   },
   {
@@ -45,6 +49,7 @@ export const PROJECTS = projectSchema.array().parse([
     tags: ['Full-Stack', 'React', 'Team Project'],
     tech: ['React', 'TypeScript', 'NestJS', 'PostgreSQL', 'Tailwind CSS', 'Docker'],
     repoUrl: 'https://github.com/Anpu21/Byte_squad',
+    image: ledgerproImg,
     featured: true,
   },
   {
@@ -66,6 +71,7 @@ export const PROJECTS = projectSchema.array().parse([
     tags: ['Frontend', 'React'],
     tech: ['React', 'TypeScript', 'Vite', 'Framer Motion', 'React Router', 'Zod'],
     repoUrl: 'https://github.com/KaviyaRajan29/portfolio',
+    image: portfolioImg,
     featured: true,
   },
 ])

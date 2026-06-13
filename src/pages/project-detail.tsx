@@ -74,6 +74,17 @@ export function Component() {
         </div>
       </Reveal>
 
+      {project.image ? (
+        <Reveal className={styles.shot}>
+          <img
+            className={styles.shotImg}
+            src={project.image}
+            alt={`${project.title} screenshot`}
+            loading="lazy"
+          />
+        </Reveal>
+      ) : null}
+
       <div className={styles.grid}>
         <Reveal className={styles.panel}>
           <h2 className={styles.h2}>Highlights</h2>
